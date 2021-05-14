@@ -1,79 +1,68 @@
-<<<<<<< HEAD
-import timeit, time, os, win32api, win32con
-"""
-class P():
-    def __init__(self):
-        self.clic = win32api.GetAsyncKeyState(0x01)
-        temp_x, temp_y = win32api.GetCursorPos()
+
+import timeit, time, os, win32api, win32con, sys
+
+# ---------------------------------------------
+# Este es El codigo principal.... ahora a hacer un hilo
+tiempo_v = int()
+contador = int()
+val = int() #Val es la variable que activa y desativa la funcion
+class inicio():
+    def __init__(self, contador, val, tiempo_v):
+        self.tiempo_v = tiempo_v
+        self.contador = contador    
+        self.rueda(self.contador, val, self.tiempo_v)
+
+    def rueda(self, contador, val, tiempo_v):
+
         while True:
             state_actual = win32api.GetAsyncKeyState(0x01)
-            if state_actual != self.clic:
-                self.clic = state_actual
-                if state_actual < 0:
-                    x1, y1 = win32api.GetCursorPos()
-                    if (x1 != temp_x or y1 != temp_y):
-                        print('Boton clic presionado en: ' + str(x1) +", "+str(y1))
-                        temp_x = x1
-                        temp_y = y1
-                        self.Segundo_OP(x1, y1)
-                        break 
-            time.sleep(.001)
-            pass
-
-    def Segundo_OP(self, x1, y1):
-        temp_x2, temp_y2 = win32api.GetCursorPos()
-        while True:
-            state_actual = win32api.GetAsyncKeyState(0x01)
-            if state_actual != self.clic:
-                self.clic = state_actual
-                if state_actual < 0:
-                    x2, y2 = win32api.GetCursorPos()
-                    if (x2 != temp_x2 or y2 != temp_y2):
-                        print('Boton clic presionado en: ' + str(x2) +", "+str(y2))
-                        temp_x2 = x2
-                        temp_y2 = y2
-                        break 
-            time.sleep(.001)
-            pass
-        pass
-
-P()
-"""
-count = int()
-
-def validador_clic(count):
-    clic = win32api.GetAsyncKeyState(0x01)
-    temp_x, temp_y = win32api.GetCursorPos()
-    
-    while True:
-        state_actual = win32api.GetAsyncKeyState(0x01)
-        if state_actual != clic:
-            clic = state_actual
-            if state_actual < 0:
-                x1, y1 = win32api.GetCursorPos()
-
-                if (x1 != temp_x or y1 != temp_y):
-                    count = count + 1
-                    print('click se suma uno {}'.format(count))
-                    
-                    if count < 3:
-                        validador_clic(count)
-                        pass
+            if val <= 0:
+                if tiempo_v == 0:
+                    print('tomando tiempo')
+                    global inicio_t
+                    inicio_t = time.time() # Aqui tomamos el tiempo
+                    tiempo_v = 1
                     pass
 
-                if count == 3:
-                    print('Boton clic presionado en: ' + str(x1) +", "+str(y1))
-                    temp_x = x1
-                    temp_y = y1
-                    if count >= 3:
-                        count = 0
-                        print('reinicio')
-                        pass
-        time.sleep(0.0001)
-        pass
-    pass
+                if (state_actual < 0) and (contador <= 3 ) :
+                    print('Es menor')
+                    contador += 1
+                    print(contador)
+                    break
+                pass
+            elif (val == 1): #seguir con la operacion principal
+                print('fin del comprobador')
+                # aqui seguimos validando el tiempo
+                
+                sys.exit() # esto es temporal
+                break
+            
+            pass
+###############################################################################
+            if contador >= 3:
+                val = 1
+                contador = 0
+                tiempo_v = 0
 
-validador_clic(count)
-=======
+                fin_t = time.time()
 
->>>>>>> 40ba5885b25e99ba3443a489b90b868f12aac9ce
+                t_trans = float(fin_t - inicio_t)
+
+                print(t_trans)
+
+                if t_trans <= 1:
+                    print('pasa')
+                    #Ejecutar aque las demas funciones XD de capture
+                    pass
+                elif t_trans >= 1:
+                    print('no pasa')
+                    pass
+                break
+                pass
+################################################################################        
+
+        time.sleep(0.1)
+        print(val)
+        inicio(contador, val, tiempo_v)
+
+inicio(contador, val, tiempo_v)
