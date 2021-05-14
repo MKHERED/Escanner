@@ -1,6 +1,24 @@
 
 import timeit, time, os, win32api, win32con, sys
 
+class operar():
+    def __init__(self):
+        for T in range(24):
+            print('ejecucion: {}'.format(T))
+    
+        print('fin de la operacion')
+        inicio(contador, val, tiempo_v)
+
+
+
+
+
+
+
+
+
+
+
 # ---------------------------------------------
 # Este es El codigo principal.... ahora a hacer un hilo
 tiempo_v = int()
@@ -30,39 +48,42 @@ class inicio():
                     print(contador)
                     break
                 pass
-            elif (val == 1): #seguir con la operacion principal
+
+            if contador >= 3: #seguir con la operacion principal
+                # Aqui se bloquean las variables
+                val = 1
+                contador = 0
+                tiempo_v = 0
+                # Aqui se establece el timepo fina
+                fin_t = time.time()
+                # Aqui se establece el tiempo transcurrido
+                t_transc = float(fin_t - inicio_t)
+                print(t_transc)
+
+                if t_transc <= 1:
+                    print('pasa')
+                    operar()
+#####################poner la funcion a llamar o clase
+                    pass
+                elif t_transc >= 1:
+                    print('no pasa')
+                    
+                    inicio(contador = 0, val = 0, tiempo_v = 0)
+#####################Aqui poner el reinicio del bucle while
+                    pass
                 print('fin del comprobador')
+
                 # aqui seguimos validando el tiempo
                 
                 sys.exit() # esto es temporal
                 break
             
-            pass
-###############################################################################
-            if contador >= 3:
-                val = 1
-                contador = 0
-                tiempo_v = 0
-
-                fin_t = time.time()
-
-                t_trans = float(fin_t - inicio_t)
-
-                print(t_trans)
-
-                if t_trans <= 1:
-                    print('pasa')
-                    #Ejecutar aque las demas funciones XD de capture
-                    pass
-                elif t_trans >= 1:
-                    print('no pasa')
-                    pass
-                break
-                pass
-################################################################################        
+            pass       
 
         time.sleep(0.1)
         print(val)
         inicio(contador, val, tiempo_v)
 
 inicio(contador, val, tiempo_v)
+
+
