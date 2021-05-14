@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import timeit, time, os, win32api, win32con
 """
 class P():
@@ -73,3 +74,6 @@ def validador_clic(count):
     pass
 
 validador_clic(count)
+=======
+
+>>>>>>> 40ba5885b25e99ba3443a489b90b868f12aac9ce
