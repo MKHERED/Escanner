@@ -31,7 +31,7 @@ class process():
         screenshot = pyautogui.screenshot(region=(self.x1, self.y1, self.ancho, self.alto))
         #print('paso')
         #Se guarda la folo en self.url... 
-        screenshot.save(self.url)
+        screenshot.save(self.url)s
 
         #Tiempo miemtras se guarda la foto para continuar
         time.sleep(0.5)
@@ -169,6 +169,7 @@ class inicio():
 
 inicio()
             
-
+#### preguntar a David como el mide el tiempo del usuario para evaluar un if 
+#### osea ejemplo: si la persona hace clic en menos de 5 segundo pasa sino el boton se desactiva 
 
 
