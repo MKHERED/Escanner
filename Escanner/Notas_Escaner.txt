@@ -1,1 +1,103 @@
 Solucionar un error, que tiene al ejuctar como programa, aun en face de trabajo...
+Notas Y Coodenadas de donde va cada Notas
+Nota: Saque del codigo todos los comentarios porq al parecer hacen inteferencia con el codigo de PIL...Image
+segunda Nota: Ya lo habia notado anteriormente...
+
+
+
+
+14        #print("x1 = {}, y1 = {}, x2 = {}, y2 ={}".format(self.x1, self.y1, self.x2, self.y2))
+15        #Distancia desde x2 hasta x1 y y2 hasta y1
+15        #distancia = math.sqrt( (x2 - x1)**2 + (y2 - y1)**2 )
+
+18        #Distancia entre cada punto
+19        #print(distancia) 
+
+22        #print(str(self.ancho) + " Y " + str(self.alto) )
+23        #self.name = Nombre.jpeg
+
+28        #Direccion a donde se va a guardar la foto
+
+30        #Fin del init
+
+34        #Especificacion del tamaño de la foto
+
+36        #print('paso')
+37        #Se guarda la folo en self.url...
+
+40        #Tiempo miemtras se guarda la foto para continuar
+
+42        #fin de capture
+
+46        #Variable donde va el texto y a iterar como lista
+
+49        #Definicion de ruta para el analizador
+
+52        #Tiempo de espera mietras se ubica la foto
+
+55        #Comprobando que la foto ya este guardada en self.url...
+
+67        #Variable de Foto-texto a pasar
+
+70        #Texto con errores
+71        #print(img_text)
+
+73        #Capture tomada, y eliminada despues de obtener los datos
+
+77        #Limpiando los caracteres que tenga el texto
+
+81        #Dividiendo el texto en palabras y agregandolas a una lista para ser iteradas
+
+84        #print(self.text_sep)
+
+86        #Ubicacion del diccionario a usar para corregir palabras
+
+89        #Fin de analis
+
+94        #Variables a usar como diccionario, el Texto de la foto
+
+98        #Lista de palabras corregidas
+
+101        #Iterar self.palabras para comprobar si esta bien escrita o tiene errores
+
+104        #comprobar si pasa o no la verificacion
+
+107        #Sugerencias del diccionario
+
+109        #Evitar poner sugerencias de menor tamaño que la palabra del texto
+
+111        #Tomar la primera sugerencia
+
+113        #agendarla a palabras corregidas
+
+115        #Buscar el indice de la palabra mala para sustituir
+
+117        #Eliminar la palabra mala
+
+119        #Sustituir con el indice de la palabra mala, por la sugerencia
+
+122        #Crear una cadena de texto con la lista ya corregida
+
+125        #print(self.corregida)
+126        #print('--'*50)
+127        #print(texto)
+
+137        #Funcion para tomar la posicion del segundo click(x2, y2) del mouse
+
+157        #-----------------------------------------Proceso de Validacion---------------------------------------------------
+
+176        # Aqui tomamos el tiempo
+
+185        #seguir con la operacion principal
+186        # Aqui se bloquean las variables
+
+190        # Aqui se establece el tiempo final
+192        # Aqui se establece el tiempo transcurrido
+
+198        #Funcion para tomar la posicion del primer click(x1 , y1) del mouse
+
+206        #Mandar l_pos a la siguiente posicion
+
+213        ####### Reinicio del bucle
+
+Nota: Reiniar valores al final del bucle y quitar el sys.exit()
